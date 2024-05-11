@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/05/10 23:56:03 by alexafer         ###   ########.fr        #
+#    Updated: 2024/05/11 03:10:56 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADER)
 
 clean:
 	rm -f $(OBJECTS)
-	rmdir $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(TARGET)
