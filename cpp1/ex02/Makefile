@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/18 10:31:30 by alexafer         ###   ########.fr        #
+#    Updated: 2024/06/18 13:22:47 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = .objs
 
-TARGET =
+TARGET = brain
 
 MAIN = main
 
-FILES = Zombie
+FILES = 
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
