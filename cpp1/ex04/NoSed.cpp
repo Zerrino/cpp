@@ -5,20 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/21 12:55:25 by alexafer          #+#    #+#             */
-/*   Updated: 2024/06/21 13:52:43 by alexafer         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   NoSed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:31:34 by alexafer          #+#    #+#             */
-/*   Updated: 2024/06/21 12:55:13 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/06/24 12:03:30 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +26,9 @@ void	NoSed::replaceFile(void)
 	std::string	new_file_path;
 	std::string	val;
 	std::string	text;
+	std::string	new_text;
+	std::string	sub_text;
+	std::size_t	found;
 
 	std::ifstream file(this->_path);
 	if (!file.is_open())
@@ -47,9 +38,7 @@ void	NoSed::replaceFile(void)
 	}
 	new_file_path = this->_path;
 	new_file_path.insert(new_file_path.length(), ".replace");
-	
 	std::ofstream new_file(new_file_path);	
-
 	if (!new_file.is_open())
 	{
 		std::cerr << "Error opening the file!" << std::endl;
@@ -59,15 +48,21 @@ void	NoSed::replaceFile(void)
 	text = "";
 	while (std::getline(file, val))
 	{
-		std::cout << val << std::endl;
 		text.insert(text.length(), val);
 		text.insert(text.length(), "\n");
 	}
-	std::cout << std::endl << std::endl << text << std::endl;
-	
-	
-	new_file << text;
-		
+	new_text = "";
+	found = 0;
+	while (found < text.length())
+	{
+		found = text.find(this->_s1);
+		sub_text = text.substr(0, found);
+		text = text.substr(found + this->_s1.length());
+		new_text.insert(new_text.length(), sub_text);
+		new_text.insert(new_text.length(), this->_s2);
+	}
+	new_text.insert(new_text.length(), "\n");
+	new_file << new_text;
 	file.close();
 	new_file.close();
 }

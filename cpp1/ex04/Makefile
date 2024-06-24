@@ -6,14 +6,14 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/21 10:36:25 by alexafer         ###   ########.fr        #
+#    Updated: 2024/06/24 12:04:04 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 OBJ_DIR = .objs
 
