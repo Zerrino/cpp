@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 10:31:34 by alexafer          #+#    #+#             */
-/*   Updated: 2024/06/24 12:03:30 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/06/24 21:13:33 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,21 @@ void	NoSed::replaceFile(void)
 		return ;
 	}
 	text = "";
-	while (std::getline(file, val))
+	while (std::getline(file, val, '\0'))
 	{
 		text.insert(text.length(), val);
-		text.insert(text.length(), "\n");
 	}
 	new_text = "";
-	found = 0;
-	while (found < text.length())
+	found = text.find(this->_s1);
+	while (found != std::string::npos)
 	{
-		found = text.find(this->_s1);
 		sub_text = text.substr(0, found);
 		text = text.substr(found + this->_s1.length());
 		new_text.insert(new_text.length(), sub_text);
 		new_text.insert(new_text.length(), this->_s2);
+		found = text.find(this->_s1);
 	}
-	new_text.insert(new_text.length(), "\n");
+	new_text.insert(new_text.length(), text);
 	new_file << new_text;
 	file.close();
 	new_file.close();
