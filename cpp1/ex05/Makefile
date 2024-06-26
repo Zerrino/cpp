@@ -6,22 +6,22 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/24 12:04:04 by alexafer         ###   ########.fr        #
+#    Updated: 2024/06/26 13:34:27 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 CXX = c++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 #-Wall -Wextra -Werror
 
 OBJ_DIR = .objs
 
-TARGET = NoSed
+TARGET = Harl
 
 MAIN = main
 
-FILES = NoSed
+FILES = Harl
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
