@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/26 16:42:04 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/11 11:13:33 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += Fixed
 
 #INCLUDE
+INCLUDE += cmath
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
@@ -65,11 +68,11 @@ create:
 	done
 
 update_file:
-	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#FI\
-	LES/ {print; print "FILE += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
+	@grep -qxF "FILES += $(NAME)" Makefile || (awk '/#FI\
+	LES/ {print; print "FILES += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
 
 update_includes:
-	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#INC\
+	@grep -qxF "INCLUDE += $(NAME)" Makefile || (awk '/#INC\
 	LUDE/ {print; print "INCLUDE += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
 
 create_files:
@@ -109,7 +112,7 @@ create_files:
 
 main:
 	@if [ ! -f "main.cpp" ]; then \
-		for file in $(FILE); do \
+		for file in $(FILES); do \
 			echo "#include \"$$file.hpp\"" >> main.cpp; \
 		done; \
 		make header/main.cpp; \

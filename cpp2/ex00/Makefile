@@ -6,13 +6,13 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/26 16:42:04 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/11 09:46:32 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CXX = c++
-CXXFLAGS = -std=c++98 #-Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 OBJ_DIR = .objs
 
@@ -21,8 +21,10 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += Fixed
 
 #INCLUDE
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
@@ -66,7 +68,7 @@ create:
 
 update_file:
 	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#FI\
-	LES/ {print; print "FILE += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
+	LES/ {print; print "FILES += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
 
 update_includes:
 	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#INC\

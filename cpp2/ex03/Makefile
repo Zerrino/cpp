@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/06/26 16:42:04 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/11 09:47:06 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,11 +65,11 @@ create:
 	done
 
 update_file:
-	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#FI\
-	LES/ {print; print "FILE += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
+	@grep -qxF "FILES += $(NAME)" Makefile || (awk '/#FI\
+	LES/ {print; print "FILES += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
 
 update_includes:
-	@grep -qxF "FILE += $(NAME)" Makefile || (awk '/#INC\
+	@grep -qxF "INCLUDE += $(NAME)" Makefile || (awk '/#INC\
 	LUDE/ {print; print "INCLUDE += $(NAME)"; next}1' Makefile > Makefile.tmp && mv Makefile.tmp Makefile)
 
 create_files:
