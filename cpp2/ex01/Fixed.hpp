@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 09:00:17 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/11 12:39:04 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/14 14:06:22 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class	Fixed
 
 		// Copy overload assignements
 		Fixed& operator= (const Fixed& fixed);
-		Fixed& operator<< (const Fixed& fixed);
 		
 		float	toFloat(void) const;
 		int		toInt(void) const;
