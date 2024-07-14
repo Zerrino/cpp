@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/07/11 09:47:06 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/11 11:13:33 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += Fixed
 
 #INCLUDE
+INCLUDE += cmath
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
@@ -109,7 +112,7 @@ create_files:
 
 main:
 	@if [ ! -f "main.cpp" ]; then \
-		for file in $(FILE); do \
+		for file in $(FILES); do \
 			echo "#include \"$$file.hpp\"" >> main.cpp; \
 		done; \
 		make header/main.cpp; \
