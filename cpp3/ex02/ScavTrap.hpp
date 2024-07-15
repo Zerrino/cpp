@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 08:24:09 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/15 16:05:35 by alexafer         ###   ########.fr       */
+/*   Created: 2024/07/15 08:24:00 by alexafer          #+#    #+#             */
+/*   Updated: 2024/07/15 12:52:58 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+# include <iostream>
+# include "ClapTrap.hpp"
+
+class	ScavTrap: public ClapTrap
 {
-	FragTrap test("test!");
+	private:
+		bool	_gate_keeper;
+	public:
+		ScavTrap(std::string name);
+		~ScavTrap(void);
 
-	test.attack("Bad");
-	test.highFivesGuys();
-	return (0);
-}
+		void	guardGate(void);
+};
+
+#endif

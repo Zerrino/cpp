@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 14:43:24 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/14 15:21:51 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:58:57 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,33 @@
 ClapTrap::ClapTrap(std::string name)
 	:	_name(name), _hit_points(10), _egy_points(10), _atk_damage(0)
 {
+	this->_func = __func__;
 	std::cout << "ClapTrap " << name << " was made!" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap " << _name << " got deconstructed!" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " got deconstructed!" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_egy_points > 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks "
+		std::cout << this->_func << " " << this->_name << " attacks "
 			<< target <<", causing " << this->_atk_damage 
 			<< " points of damage!" << std::endl;
 		this->_egy_points = this->_egy_points - 1;
-		std::cout << "ClapTrap" << this->_name << " lost one energy point! "
+		std::cout << this->_func << " " << this->_name << " lost one energy point! "
 		  << this->_egy_points << " remaining!" << std::endl;	
 	}
 	else
-		std::cout << "ClapTrap " << this->_name << " has no energy points to attack!" << std::endl;
+		std::cout << this->_func  << " " << this->_name << " has no energy points to attack!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < amount && this->_hit_points)
@@ -50,18 +51,18 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	if (amount == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " took no damage!" 
+		std::cout << this->_func << " " << this->_name << " took no damage!" 
 			<< " Remaining Hit point : " << this->_hit_points << std::endl;
 	}
 	else if (i == 0)
-		std::cout << "ClapTrap " << this->_name << " have already died!" << std::endl;
+		std::cout << this->_func << " " << this->_name << " have already died!" << std::endl;
 	else if (amount > i)
 	{
-		std::cout << "ClapTrap " << this->_name << " died from the attack!" << std::endl;
+		std::cout << this->_func << " " << this->_name << " died from the attack!" << std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " has taken " << i << " damage!"
+		std::cout << this->_func << " " << this->_name << " has taken " << i << " damage!"
 			<< " Remaining Hit point : " << this->_hit_points << std::endl;
 	}
 }
@@ -70,13 +71,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_egy_points == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " can't be repaired! No energy left." << std::endl;
+		std::cout << this->_func << " " << this->_name << " can't be repaired! No energy left." << std::endl;
 	}
 	else
 	{
 		this->_egy_points -= 1;
 		this->_hit_points += amount;
-		std::cout << "ClapTrap " << this->_name << " got repaired by " << amount << " he has now " << this->_hit_points
+		std::cout << this->_func << " " << this->_name << " got repaired by " << amount << " he has now " << this->_hit_points
 			<< " hit points!" << std::endl;
 	}
 }
