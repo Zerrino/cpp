@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 08:24:00 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/15 11:28:55 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:52:58 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 # define SCAVTRAP_HPP
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class	ScavTrap
+class	ScavTrap: public ClapTrap
 {
 	private:
-
+		bool	_gate_keeper;
 	public:
-		ScavTrap(void);
+		ScavTrap(std::string name);
 		~ScavTrap(void);
+
+		void	guardGate(void);
 };
 
 #endif

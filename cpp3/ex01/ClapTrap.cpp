@@ -6,21 +6,22 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 14:43:24 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/15 08:43:25 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:58:57 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name)
-	:	_name(name), _hit_points(10), _egy_points(10), _atk_damage(0), _func(__func__)
+	:	_name(name), _hit_points(10), _egy_points(10), _atk_damage(0)
 {
-	std::cout << this->_func << " " << name << " was made!" << std::endl;
+	this->_func = __func__;
+	std::cout << "ClapTrap " << name << " was made!" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << this->_func << " " << _name << " got deconstructed!" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " got deconstructed!" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -40,7 +41,7 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < amount && this->_hit_points)

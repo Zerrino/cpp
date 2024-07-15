@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 14:43:24 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/14 15:21:51 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/15 12:57:45 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < amount && this->_hit_points)
