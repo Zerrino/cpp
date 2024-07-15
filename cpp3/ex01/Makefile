@@ -21,8 +21,11 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += ScavTrap
+FILES += ClapTrap
 
 #INCLUDE
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
