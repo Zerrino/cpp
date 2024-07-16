@@ -6,7 +6,7 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/07/16 14:15:41 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/16 14:19:35 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ TARGET = program
 MAIN = main
 
 #FILES
-FILES += Test
 
 #INCLUDE
 
