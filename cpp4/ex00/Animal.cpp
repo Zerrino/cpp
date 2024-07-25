@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
+/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/16 14:25:32 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:24:49 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal()
 {
+	this->type = "Animal";
 }
 
 Animal::~Animal()
@@ -32,7 +33,12 @@ Animal& Animal::operator= (const Animal& cp)
 	return(*this);
 }
 
-void	Animal::makeSound(void)
+void	Animal::makeSound(void) const
 {
-	std::cout << "Animal is making a sound!" << std::endl;
+	std::cout << this->getType() << " is making a sound!" << std::endl;
+}
+
+std::string	Animal::getType(void) const
+{
+	return (this->type);
 }

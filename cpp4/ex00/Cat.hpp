@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
+/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/16 14:29:12 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:15:45 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	Cat: public Animal
 		~Cat();
 		Cat(const Cat &cp);
 		Cat& operator= (const Cat &cp);
+		void		makeSound(void) const;
 };
 
 #endif

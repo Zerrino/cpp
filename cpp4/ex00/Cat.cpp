@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
+/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/16 14:30:03 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:24:14 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat()
-	type("Cat")
 {
+	this->type = "Cat";
 }
 
 Cat::~Cat()
@@ -33,7 +33,7 @@ Cat& Cat::operator= (const Cat& cp)
 	return(*this);
 }
 
-void	Cat::makeSound(void)
+void	Cat::makeSound(void) const
 {
-	std::cout << "Miaoouuuuuuuuuu" << std::endl;
+	std::cout << this->getType() << " says : Miaoouuuuuuuuuu" << std::endl;
 }
