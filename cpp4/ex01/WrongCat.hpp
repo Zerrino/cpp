@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/25 18:22:57 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:28:45 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Cat::Cat()
-{
-	std::cout << "Cat Constructor got called." << std::endl;
-	this->type = "Cat";
-}
+# include <iostream>
+# include "WrongAnimal.hpp"
 
-Cat::~Cat()
+class	WrongCat : public WrongAnimal
 {
-	std::cout << "Cat Deconstructor got called." << std::endl;
-}
+	private:
 
-Cat::Cat(const Cat& cp)
-{
-	*this = cp;
-}
+	public:
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &cp);
+		WrongCat& operator= (const WrongCat &cp);
+		void		makeSound(void) const;
+};
 
-Cat& Cat::operator= (const Cat& cp)
-{
-	if (this != &cp)
-		*this = cp;
-	return(*this);
-}
-
-void	Cat::makeSound(void) const
-{
-	std::cout << this->getType() << " says : Miaoouuuuuuuuuu" << std::endl;
-}
+#endif

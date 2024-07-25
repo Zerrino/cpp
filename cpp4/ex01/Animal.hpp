@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/25 18:22:57 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:22:50 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-Cat::Cat()
-{
-	std::cout << "Cat Constructor got called." << std::endl;
-	this->type = "Cat";
-}
+# include <iostream>
 
-Cat::~Cat()
+class	Animal
 {
-	std::cout << "Cat Deconstructor got called." << std::endl;
-}
+	private:
 
-Cat::Cat(const Cat& cp)
-{
-	*this = cp;
-}
+	protected:
+		std::string type;
+	public:
+		Animal();
+		virtual ~Animal();
+		Animal(const Animal &cp);
+		Animal& operator= (const Animal &cp);
 
-Cat& Cat::operator= (const Cat& cp)
-{
-	if (this != &cp)
-		*this = cp;
-	return(*this);
-}
+		virtual void	makeSound(void) const;
+		std::string		getType(void) const;
+};
 
-void	Cat::makeSound(void) const
-{
-	std::cout << this->getType() << " says : Miaoouuuuuuuuuu" << std::endl;
-}
+#endif

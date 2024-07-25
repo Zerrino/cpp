@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/25 18:22:57 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:21:11 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-Cat::Cat()
-{
-	std::cout << "Cat Constructor got called." << std::endl;
-	this->type = "Cat";
-}
+# include <iostream>
+# include "Animal.hpp"
 
-Cat::~Cat()
+class	Dog: public Animal
 {
-	std::cout << "Cat Deconstructor got called." << std::endl;
-}
+	private:
 
-Cat::Cat(const Cat& cp)
-{
-	*this = cp;
-}
+	public:
+		Dog();
+		~Dog();
+		Dog(const Dog &cp);
+		Dog& operator= (const Dog &cp);
+		void		makeSound(void) const;
+};
 
-Cat& Cat::operator= (const Cat& cp)
-{
-	if (this != &cp)
-		*this = cp;
-	return(*this);
-}
-
-void	Cat::makeSound(void) const
-{
-	std::cout << this->getType() << " says : Miaoouuuuuuuuuu" << std::endl;
-}
+#endif
