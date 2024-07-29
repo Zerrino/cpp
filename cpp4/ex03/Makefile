@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
+#    By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/07/16 14:19:35 by alexafer         ###   ########.fr        #
+#    Updated: 2024/07/28 02:53:12 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,16 @@ TARGET = program
 MAIN = main
 
 #FILES
+#FILES += IMateriaSource
+#FILES += ICharacter
+FILES += MateriaSource
+FILES += Cure
+FILES += Ice
+FILES += Character
+FILES += AMateria
 
 #INCLUDE
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 

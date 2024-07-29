@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/27 01:39:42 by alexafer         ###   ########.fr       */
+/*   Created: 2024/07/27 17:02:41 by alexafer          #+#    #+#             */
+/*   Updated: 2024/07/28 02:07:21 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class	Dog: public Animal
+class	Cure : public AMateria
 {
 	private:
-		Brain* _brain;
-	public:
-		Dog();
-		~Dog();
-		Dog(Dog &cp);
-		Dog& operator=(const Dog& cp);
 
-		void		makeSound(void) const;
-		Brain*		getBrain() const;
+	public:
+		Cure();
+		~Cure();
+		Cure(const Cure &cp);
+
+		Cure& operator= (const Cure &cp);
+
+		AMateria*	clone() const;
+		void		use(ICharacter& target);
+
 };
 
 #endif

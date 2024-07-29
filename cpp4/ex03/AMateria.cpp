@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
+/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 09:00:19 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/11 09:36:49 by alexafer         ###   ########.fr       */
+/*   Created: 2024/07/27 17:02:23 by alexafer          #+#    #+#             */
+/*   Updated: 2024/07/27 22:32:03 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "AMateria.hpp"
 
-int main( void )
+AMateria::AMateria(std::string const & type)
+	: type(type)
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+}
+
+AMateria::~AMateria()
+{
+}
+
+const std::string& AMateria::getType() const
+{
+	return (this->type);
 }

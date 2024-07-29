@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/27 01:39:42 by alexafer         ###   ########.fr       */
+/*   Created: 2024/07/27 17:02:41 by alexafer          #+#    #+#             */
+/*   Updated: 2024/07/28 02:03:28 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "Ice.hpp"
 
-# include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
-
-class	Dog: public Animal
+Ice::Ice()
+	: AMateria("ice")
 {
-	private:
-		Brain* _brain;
-	public:
-		Dog();
-		~Dog();
-		Dog(Dog &cp);
-		Dog& operator=(const Dog& cp);
+}
 
-		void		makeSound(void) const;
-		Brain*		getBrain() const;
-};
+Ice::~Ice()
+{
+}
 
-#endif
+Ice::Ice(const Ice& cp)
+	: AMateria("ice")
+{
+	*this = cp;
+}
+
+Ice& Ice::operator= (const Ice& cp)
+{
+	if (this != &cp)
+		this->type = cp.type;
+	return (*this);
+}
+
+AMateria*	Ice::clone() const
+{
+	return (new Ice(*this));
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

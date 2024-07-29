@@ -6,22 +6,22 @@
 #    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/07/04 06:05:16 by alexafer         ###   ########.fr        #
+#    Updated: 2024/05/13 08:46:53 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 CXX = c++
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR = .objs
 
-TARGET = Harl
+TARGET = Account
 
 MAIN = main
 
-FILES = Harl
+FILES = Account
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
@@ -40,7 +40,6 @@ $(OBJ_DIR)/%.o: %.cpp $(HEADER)
 
 clean:
 	rm -f $(OBJECTS)
-	@if [ -d $(OBJ_DIR) ]; then rmdir $(OBJ_DIR); fi
 
 fclean: clean
 	rm -f $(TARGET)

@@ -1,51 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 14:18:49 by alexafer          #+#    #+#             */
-/*   Updated: 2024/07/27 01:37:23 by alexafer         ###   ########.fr       */
+/*   Created: 2024/07/16 14:18:50 by alexafer          #+#    #+#             */
+/*   Updated: 2024/07/25 18:23:07 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Animal Constructor got called." << std::endl;
-	this->type = "Animal";
+	std::cout << "WrongAnimal Constructor got called." << std::endl;
+	this->type = "WrongAnimal";
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal Deconstructor got called." << std::endl;
+	std::cout << "WrongAnimal Deconstructor got called." << std::endl;
 }
 
-Animal::Animal(const Animal& cp)
+WrongAnimal::WrongAnimal(const WrongAnimal& cp)
 {
 	*this = cp;
 }
 
-Animal& Animal::operator= (const Animal& cp)
+WrongAnimal& WrongAnimal::operator= (const WrongAnimal& cp)
 {
 	if (this != &cp)
-		this->type = cp.getType();
-	return (*this);
+		*this = cp;
+	return(*this);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	std::cout << this->getType() << " is making a sound!" << std::endl;
 }
 
-Brain*	Animal::getBrain(void) const
-{
-	return (0);
-}
-
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
