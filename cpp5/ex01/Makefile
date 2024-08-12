@@ -21,8 +21,12 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += Form
+FILES += Bureaucrat
 
 #INCLUDE
+INCLUDE += exception
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
