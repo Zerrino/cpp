@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:07:53 by alexafer          #+#    #+#             */
-/*   Updated: 2024/08/10 19:27:52 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/08/12 20:07:19 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class	Bureaucrat
 
 		const std::string getName() const;
 		int	getGrade() const;
+
+		void	signForm()
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
