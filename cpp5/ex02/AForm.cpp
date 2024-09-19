@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 19:47:53 by alexafer          #+#    #+#             */
-/*   Updated: 2024/09/19 10:12:39 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/09/19 10:13:15 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form()
+AForm::AForm()
 	: _signed(0), _gradeSign(0), _gradeReq(0)
 {
 }
 
-Form::Form(std::string name, int gradeSign, int gradeReq)
+AForm::AForm(std::string name, int gradeSign, int gradeReq)
 	: _name(name), _signed(0), _gradeSign(gradeSign), _gradeReq(gradeReq)
 {
 	if (gradeSign > 150 || gradeReq > 150)
@@ -26,17 +26,17 @@ Form::Form(std::string name, int gradeSign, int gradeReq)
 		throw GradeTooHighException();
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 }
 
-Form::Form(const Form& cp)
+AForm::AForm(const AForm& cp)
 	: _signed(0), _gradeSign(1), _gradeReq(1)
 {
 	*this = cp;
 }
 
-Form& Form::operator= (const Form& cp)
+AForm& AForm::operator= (const AForm& cp)
 {
 	if (this != &cp)
 	{
@@ -45,17 +45,22 @@ Form& Form::operator= (const Form& cp)
 	return (*this);
 }
 
-const char* Form::GradeTooHighException::what() const throw ()
+const char* AForm::GradeTooHighException::what() const throw ()
 {
 	return ("Grade is too high!");
 }
 
-const char* Form::GradeTooLowException::what() const throw ()
+const char* AForm::GradeTooLowException::what() const throw ()
 {
 	return ("Grade is too low!");
 }
 
-void	Form::beSigned(Bureaucrat &m)
+const char* AForm::FormNotSignException::what() const throw ()
+{
+	return ("Form isn't signed!");
+}
+
+void	AForm::beSigned(Bureaucrat &m)
 {
 	if (m.getGrade() > this->_gradeSign)
 		throw GradeTooLowException();
@@ -64,25 +69,37 @@ void	Form::beSigned(Bureaucrat &m)
 	this->_signed = 1;
 }
 
-const std::string	Form::getName() const
+const std::string	AForm::getName() const
 {
 	return (this->_name);
 }
 
-bool	Form::getSign() const
+bool	AForm::getSign() const
 {
 	return (this->_signed);
 }
-int	Form::getGradeSign() const
+
+int	AForm::getGradeSign() const
 {
 	return (this->_gradeSign);
 }
-int	Form::getGradeReq() const
+
+int	AForm::getGradeReq() const
 {
 	return (this->_gradeReq);
 }
 
-std::ostream& operator<<(std::ostream& os, const Form& b)
+void	AForm::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->_gradeReq)
+		throw GradeTooLowException();
+	if (this->_signed == 0)
+		throw FormNotSignException();
+	takeAction();
+}
+
+
+std::ostream& operator<<(std::ostream& os, const AForm& b)
 {
 	os << "Form name : " << b.getName() << std::endl;
 	os << "Form sign : " << b.getSign() << std::endl;

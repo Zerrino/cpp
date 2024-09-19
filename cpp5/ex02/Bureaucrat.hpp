@@ -6,7 +6,7 @@
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:07:53 by alexafer          #+#    #+#             */
-/*   Updated: 2024/09/19 07:39:31 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/09/19 09:06:35 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class	Bureaucrat
 {
@@ -43,7 +43,8 @@ class	Bureaucrat
 		const std::string getName() const;
 		int	getGrade() const;
 
-		void	signForm(Form &m);
+		void	signForm(AForm &m);
+		void	executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

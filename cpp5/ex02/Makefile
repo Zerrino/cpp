@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alexafer <alexafer@student.s19.be>         +#+  +:+       +#+         #
+#    By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/08/09 15:05:49 by alexafer         ###   ########.fr        #
+#    Updated: 2024/09/19 10:11:57 by alexafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,15 @@ TARGET = program
 MAIN = main
 
 #FILES
+FILES += PresidentialPardonForm
+FILES += RobotomyRequestForm
+FILES += ShrubberyCreationForm
+FILES += AForm
+FILES += Bureaucrat
 
 #INCLUDE
+INCLUDE += exception
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 

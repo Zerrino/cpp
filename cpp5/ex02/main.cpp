@@ -6,27 +6,28 @@
 /*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 15:07:55 by alexafer          #+#    #+#             */
-/*   Updated: 2024/09/19 08:16:28 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/09/19 10:00:13 by alexafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void)
 {
 	try
 	{
-		Bureaucrat john("John", 2);
-		Form test("test", 2, 2);
+		Bureaucrat john("john", 1);
+		ShrubberyCreationForm President("Home");
 
-		std::cout << john << std::endl;
-		std::cout << test << std::endl;
+		std::cout << President.getGradeReq() << std::endl;
+		john.signForm(President);
+		john.executeForm(President);
+		//President.execute(john);
 
-		john.decrementGrade();
-		john.signForm(test);
-		john.incrementGrade();
-		john.signForm(test);
 	}
 	catch (std::exception& e)
 	{
