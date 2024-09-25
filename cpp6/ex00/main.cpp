@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:48:08 by zerrino           #+#    #+#             */
-/*   Updated: 2024/09/24 15:59:38 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/25 16:10:45 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	ScalarConverter	Number;
-	if (argc > 1)
-		Number.converter(argv[1]);
+	if (argc == 2)
+		ScalarConverter::converter(argv[1]);
+	else
+		std::cout << argv[0] << " <to_convert>" << std::endl;
 	return (0);
 }

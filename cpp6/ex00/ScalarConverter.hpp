@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:48:01 by zerrino           #+#    #+#             */
-/*   Updated: 2024/09/24 16:59:26 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/25 12:09:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sstream>
 # include <cstdlib>
 # include <limits>
+# include <cmath>
 # include <cctype>
 # include <cerrno>
 # include <climits>
