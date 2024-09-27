@@ -23,8 +23,10 @@ MAIN = main
 HPP_FILES =
 
 #FILES
+FILES += Span
 
 #INCLUDE
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
