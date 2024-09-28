@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 08:25:01 by alexafer          #+#    #+#             */
-/*   Updated: 2024/09/19 09:41:20 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/09/25 17:02:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include <exception>
 # include <iostream>
-# include <random>
 # include "AForm.hpp"
+# include <cstdlib>
+# include <ctime>
 
 class	RobotomyRequestForm : public AForm
 {

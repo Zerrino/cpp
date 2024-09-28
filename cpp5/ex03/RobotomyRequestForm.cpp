@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexafer <alexafer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 08:25:01 by alexafer          #+#    #+#             */
-/*   Updated: 2024/09/19 09:51:08 by alexafer         ###   ########.fr       */
+/*   Updated: 2024/09/25 17:02:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& 
 
 void	RobotomyRequestForm::takeAction() const
 {
-	std::random_device ran;
+	srand(time(0));
+	int randomNumber = rand();
 
 	std::cout << "ZzzzzZzzzzz..." << std::endl;
 	std::cout << this->_target << " you're informed that ... ";
-	if (ran() % 2)
+	if (randomNumber % 2)
 		std::cout << "you have been successfully robotomized!!" << std::endl;
 	else
 		std::cout << "you have NOT been successfully robotomized..." << std::endl;
