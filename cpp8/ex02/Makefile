@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/06 22:30:05 by alexafer          #+#    #+#              #
-#    Updated: 2024/09/25 19:47:53 by marvin           ###   ########.fr        #
+#    Updated: 2024/09/30 19:40:45 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,12 @@ TARGET = program
 
 MAIN = main
 
-HPP_FILES =
+HPP_FILES = MutantStack
 
 #FILES
 
 #INCLUDE
+INCLUDE += iostream
 
 SOURCES = $(MAIN:=.cpp) $(FILES:=.cpp)
 
